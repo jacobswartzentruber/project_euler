@@ -6,7 +6,9 @@
 def lex_permutation(numbers, index)
 	@permutations = []
 
+	# Find next number for permutation out of numbers left to use
 	def make_per(available, final)
+		# If no more available numbers, add final number to permutations array
 		if available.length == 1
 			final += available
 			@permutations << final
