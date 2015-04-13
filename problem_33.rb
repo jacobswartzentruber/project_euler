@@ -32,6 +32,7 @@ def digit_cancel_fractions
 	end
 	puts answer
 
+	# Multiply all answers together to find demoninator products
 	top_prod = 1
 	bot_prod = 1
 	answer.each do |top,bottom|
