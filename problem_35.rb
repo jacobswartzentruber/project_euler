@@ -17,16 +17,19 @@ end
 def circular_primes(limit)
 	sum = 0
 	(2...limit).each do |x|
-		puts x
 		all_prime = true
+		# Create an array of digits from the number
 		digits = x.to_s.split("")
+		# For each length of array, rotate entire array and check if prime
 		digits.length.times do
+			# If number is not prime, set all_prime to false
 			unless is_prime?(digits.inject(:+).to_i)
 				all_prime = false 
 				break
 			end
 			digits.rotate!
 		end
+		# If all rotations are prime, increment sum by 1
 		sum += 1 if all_prime
 	end
 	puts sum
